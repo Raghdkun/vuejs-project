@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vuejs</title>
+        <link rel="stylesheet" href="/css/global.css">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- vue.global.prod.js -->
+    </head>
+
+    <body>
+        <h1>Hello vue</h1>
+
+        <div id="app">
+            <p>
+                {{ title }}
+            </p>
+            <p>{{age}}</p>
+            <p>
+                <button class="button-38" @click="increase();">Increase
+                    age</button>
+            </p>
+            <p>
+                <button class="button-38" @click="decrease();">Decrease
+                    age</button>
+            </p>
+            <p v-if="age == 5 ">you reached five!!</p>
+            <p v-else>click increase to reach five</p>
+
+            <br>
+            <p>{{x}}</p>
+            <p>{{y}}</p>
+
+            <!-- mouse events -->
+            <div class="box" @mouseover="mouseEvents($event)">mouse over</div>
+            <div class="box" @mouseleave="mouseEvents">mouse leave</div>
+            <div class="box" @dblclick="mouseEvents">double click</div>
+            <div class="box" @mousemove="handleMousemove">mouse move</div>
+
+            <br>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+
+                </tr>
+                <tr v-for="(user, index) in users" :key="index">
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.department}}</td>
+
+                </tr>
+
+            </table>
+            <p>
+                <a v-bind:href="url">Pne foods</a>
+            </p>
+
+        </div>
+        <script src="/js/app.js"></script>
+    </body>
+
+</html>
